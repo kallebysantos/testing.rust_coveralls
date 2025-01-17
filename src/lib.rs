@@ -14,4 +14,9 @@ mod tests {
     fn test_is_even() {
         assert!(is_even(2))
     }
+
+    #[test]
+    fn test_is_odd() {
+        assert!(!is_even(1))
+    }
 }

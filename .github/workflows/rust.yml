@@ -21,7 +21,10 @@ jobs:
 
     - uses: taiki-e/install-action@cargo-llvm-cov
     - name: Run tests
-      run: cargo llvm-cov test
+      run: cargo llvm-cov --lcov --output-path coveralls.cov test
 
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.3.4
+      with:
+        format: lcov
+        file: coveralls.cov
